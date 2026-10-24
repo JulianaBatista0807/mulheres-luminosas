@@ -656,19 +656,40 @@ footer {
   width:44px
 }
 .hero {
-  min-height:690px;
-  align-items:start
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  background:#faf4e9
+}
+.hero-bg {
+  position:relative;
+  inset:auto;
+  order:2;
+  z-index:0;
+  margin-top:-48px
+}
+.hero-bg:before {
+  content:"";
+  position:absolute;
+  inset:0 0 auto;
+  height:38%;
+  z-index:1;
+  background:linear-gradient(180deg,#faf4e9 0%,#faf4e9b3 45%,transparent 100%)
 }
 .hero-bg img {
+  height:auto;
+  aspect-ratio:1;
   object-fit:cover;
-  object-position:62% bottom
+  object-position:80% 35%
 }
 .hero:before {
-  background:linear-gradient(180deg,#faf4e9 0%,#faf4e9f2 35%,#faf4e980 56%,transparent 74%)
+  display:none
 }
 .hero-content {
-  padding-top:56px;
-  padding-bottom:310px
+  position:relative;
+  z-index:1;
+  padding-top:48px;
+  padding-bottom:24px
 }
 .hero h1 {
   font-size:clamp(3rem,13vw,4.5rem)
