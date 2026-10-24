@@ -40,3 +40,27 @@ document.querySelectorAll('.faq details').forEach((item) => {
     });
   });
 });
+
+const weekDays = document.querySelectorAll('.week-list .day');
+
+function highlightToday() {
+  const today = new Date().getDay();
+
+  weekDays.forEach((day) => {
+    const isToday = Number(day.dataset.day) === today;
+    day.classList.toggle('is-today', isToday);
+    day.open = isToday;
+    day.querySelector('.today-badge')?.remove();
+
+    if (isToday) {
+      day.querySelector('.day-title').insertAdjacentHTML('beforeend', ' <span class="today-badge">Hoje</span>');
+    }
+  });
+
+  // Atualiza novamente à meia-noite, caso a página fique aberta
+  const midnight = new Date();
+  midnight.setHours(24, 0, 0, 0);
+  setTimeout(highlightToday, midnight - new Date());
+}
+
+if (weekDays.length) highlightToday();

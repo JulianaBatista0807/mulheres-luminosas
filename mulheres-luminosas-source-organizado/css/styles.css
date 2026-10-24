@@ -359,6 +359,28 @@ h3 {
   color:var(--muted);
   font-size:.95rem
 }
+.day.is-today {
+  background:#fbeee0;
+  border-color:var(--terra);
+  box-shadow:0 0 0 1px var(--terra),var(--shadow)
+}
+.day.is-today .day-icon {
+  background:var(--terra);
+  color:var(--paper)
+}
+.today-badge {
+  display:inline-block;
+  margin-left:8px;
+  padding:2px 10px;
+  border-radius:999px;
+  background:var(--terra);
+  color:var(--paper);
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  vertical-align:middle
+}
 .practice-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
